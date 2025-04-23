@@ -9,7 +9,7 @@ match_url = st.text_input("أدخل رابط المباراة من WhoScored:")
 if st.button("تحليل"):
     with st.spinner("جارٍ استخراج البيانات..."):
         try:
-            api_url = f"https://insight90-api.onrender.com/extract?url={match_url}"  # غيّر الرابط حسب ما ظهر لك من Render
+            api_url = f"https://insight90-backend.vercel.app/extract?url={match_url}"  # غيّر الرابط حسب ما ظهر لك من Render
             response = requests.get(api_url, timeout=30)
             data = response.json()
             if "error" in data:
